@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 
-
-
 // try {
 //     const result = await fetch("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=01790ccf15009eb7a989e72f1922775f&hash=cf8f687890fc10deb7e3e77a382e6324")
 //     let resultJSON = await result.json()
 //     console.log(resultJSON)
 // } catch (error) {
-    
-// }
 
+// }
 
 export function HerosWrap() {
     const [heros, setHeros] = useState([]);
@@ -43,7 +40,7 @@ export function HerosWrap() {
             })
             .catch((error) => console.error(error));
     }
-    
+
     return (
         <main>
             {heros &&
@@ -51,7 +48,9 @@ export function HerosWrap() {
                     <div className="hero-container" key={idHero}>
                         <h1>{altHero}</h1>
                         <img src={imageHero} alt={altHero} />
-                        <a href={urlHero} target="_blank">{altHero} Wiki</a>
+                        <a href={urlHero} target="_blank">
+                            {altHero} Wiki
+                        </a>
                     </div>
                 ))}
         </main>
